@@ -115,7 +115,7 @@ notify_existing_metric(Name, Op, Type) ->
     try
         ok = folsom_metrics:notify_existing_metric(Name, Op, Type)
     catch _:_ ->
-        couch_log:notice("unknown metric: ~p", [Name]),
+        % couch_log:notice("unknown metric: ~p", [Name]),
         {error, unknown_metric}
     end.
 
